@@ -1,0 +1,128 @@
+---
+/**
+ * src/layouts/Layout.astro
+ * ─────────────────────────────────────────────────────────────
+ * Root layout — updated to support dark mode without flicker.
+ *
+ * Key additions vs original:
+ *  1. Anti-flicker inline script (FIRST element in <head>)
+ *     Reads localStorage before any paint — theme is applied
+ *     before the browser renders a single pixel.
+ *  2. ThemeToggle imported and placed in the top nav bar.
+ *  3. Dark mode CSS variables set on :root in global.css
+ *     (see global.css update instructions below).
+ * ─────────────────────────────────────────────────────────────
+ */
+
+import SEO from '../components/SEO.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
+import '../styles/global.css';
+
+export interface Props {
+  title:         string;
+  description:   string;
+  canonicalURL?: URL | string;
+  keywords?:     string;
+  ogImage?:      string;
+  showTopbar?:   boolean;
+}
+
+const {
+  title,
+  description,
+  canonicalURL = Astro.url,
+  keywords,
+  ogImage,
+  showTopbar = true,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!--
+      ╔══════════════════════════════════════════════════════════╗
+      ║  ANTI-FLICKER SCRIPT — must be FIRST in <head>           ║
+      ║  Reads localStorage and sets .dark on <html> before      ║
+      ║  any CSS is parsed or any pixels are painted.            ║
+      ║  is:inline prevents Astro from bundling/deferring it.    ║
+      ╚══════════════════════════════════════════════════════════╝
+    -->
+    <script is:inline>
+      (function () {
+        try {
+          var stored = localStorage.getItem('rmr-theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var theme = stored || (prefersDark ? 'dark' : 'light');
+          if (theme === 'dark')   document.documentElement.classList.add('dark');
+          if (theme === 'orange') document.documentElement.classList.add('orange');
+        } catch (e) {
+          // localStorage blocked — use light theme
+        }
+      })();
+    </script>
+
+    <!-- SEO meta tags -->
+    <SEO
+      title={title}
+      description={description}
+      canonicalURL={canonicalURL}
+      keywords={keywords}
+      ogImage={ogImage}
+    />
+  </head>
+
+  <body>
+    <!--
+      ── Minimal top utility bar with ThemeToggle ───────────────
+      Replace / integrate this into your existing Nav component.
+      The key is that ThemeToggle appears somewhere visible.
+    -->
+    {showTopbar && (
+      <div class="layout-topbar">
+        <span class="topbar-brand-mark" aria-hidden="true">RMR</span>
+        <ThemeToggle />
+      </div>
+    )}
+
+    <!-- Page content -->
+    <slot />
+  </body>
+</html>
+
+<style>
+  /* ── Minimal top bar (integrate into your Nav) ─────── */
+  .layout-topbar {
+    position:        sticky;
+    top:             0;
+    z-index:         100;
+    display:         flex;
+    align-items:     center;
+    justify-content: space-between;
+    padding:         0.6rem 1.5rem;
+    background:      rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom:   1px solid rgba(0,0,0,0.06);
+    transition:      background 0.25s ease, border-color 0.25s ease;
+  }
+
+  /* Dark mode topbar */
+  :global(.dark) .layout-topbar {
+    background:    rgba(13,13,13,0.92);
+    border-color:  rgba(255,255,255,0.06);
+  }
+
+  /* Orange mode topbar */
+  :global(.orange) .layout-topbar {
+    background:   rgba(241,98,34,0.95);
+    border-color: rgba(0,0,0,0.10);
+  }
+
+  .topbar-brand-mark {
+    font-family:    var(--font-mono);
+    font-size:      0.7rem;
+    letter-spacing: 0.25em;
+    color:          var(--color-brand);
+    font-weight:    600;
+  }
+</style>

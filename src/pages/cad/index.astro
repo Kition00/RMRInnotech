@@ -1,0 +1,1141 @@
+---
+/**
+ * src/pages/cad/index.astro
+ * RMR Innotech — Engineering CAD Services Page
+ */
+
+import Layout from '../../layouts/Layout.astro';
+import ThemeToggle from '../../components/ThemeToggle.astro';
+
+const year = new Date().getFullYear();
+---
+
+<Layout
+  title="Engineering CAD Services | SolidWorks Industrial Design | RMR Innotech"
+  description="RMR Innotech delivers precision Engineering CAD Services globally — SolidWorks 3D modelling, industrial design, IEC/UL-certified switchgear CAD, and DFM engineering for manufacturers in the USA, Canada, Europe, and worldwide."
+  keywords="Engineering CAD Services, SolidWorks CAD Services USA, Industrial Design Services, Switchgear CAD, IEC UL Certified CAD, Mechanical CAD Outsourcing, Electrical CAD Services, RMR Innotech"
+  showTopbar={false}
+>
+
+  <!-- ══ STICKY NAV ══ -->
+  <nav class="cad-nav nav-sticky" role="navigation" aria-label="CAD Services navigation">
+    <div class="cad-nav__inner">
+
+      <a href="/" class="cad-nav__brand" aria-label="Back to RMR Innotech home">
+        <img src="/assets/RMR.svg" alt="RMR Innotech Logo" class="nav-logo" />
+      </a>
+
+      <ul class="cad-nav__menu" role="list">
+        <li><a href="#intro"     class="cad-nav__link">Intro</a></li>
+        <li><a href="#services"  class="cad-nav__link">Services</a></li>
+        <li><a href="#expertise" class="cad-nav__link">Expertise</a></li>
+        <li><a href="#projects"  class="cad-nav__link">Projects</a></li>
+        <li><a href="#clients"   class="cad-nav__link">Clients</a></li>
+        <li><a href="#why-us"    class="cad-nav__link">Why Us</a></li>
+        <li><a href="#contact"   class="cad-nav__link cad-nav__link--cta">Contact</a></li>
+        <li style="margin-left:1rem;"><ThemeToggle /></li>
+      </ul>
+
+      <label class="nav-toggle" for="nav-check" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </label>
+      <input type="checkbox" id="nav-check" class="nav-check" aria-hidden="true" />
+      <ul class="cad-nav__mobile" role="list">
+        <li><a href="#intro">Intro</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#clients">Clients</a></li>
+        <li><a href="#why-us">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <main>
+
+    <!-- ══ HERO / INTRO ══ -->
+    <section id="intro" class="cad-hero section-pad">
+      <div class="container">
+        <div class="cad-hero__copy">
+          <p class="label" style="margin-bottom:1rem;">Global Engineering Partner</p>
+          <h1 class="cad-hero__heading">
+            Engineering<br />
+            <em>CAD Services</em>
+          </h1>
+          <hr class="rule-brand" />
+          <p class="cad-hero__intro">
+            RMR Innotech provides <strong>SolidWorks design</strong> and <strong>engineering services</strong> for
+            industrial and manufacturing clients worldwide, delivering accurate, practical, and
+            production-ready designs. Our team focuses on clear communication, reliable
+            execution, and meeting deadlines. With deep roots in the machine manufacturing
+            industry, we understand how products are actually built — not just
+            modeled — allowing us to create designs that work on the shop floor.
+          </p>
+          <a href="#contact" class="btn-primary" style="margin-top:2rem;display:inline-flex;">
+            Request a Consultation &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══ SERVICES ══ -->
+    <section id="services" class="section-pad services-section">
+      <div class="container">
+        <div class="section-header-left">
+          <p class="label">What We Offer</p>
+          <h2 class="section-title-left">Our Services</h2>
+          <p class="section-sub-left">
+            Comprehensive industrial design services built around your project requirements.
+          </p>
+        </div>
+        <div class="services-list">
+
+          <article class="service-item">
+            <div class="service-item__num">01</div>
+            <div class="service-item__body">
+              <h3 class="service-item__title">
+                Hourly SolidWorks Design services including
+                <span class="text-brand">Part and Assembly modeling</span>
+                and <span class="text-brand">Drafting</span>
+                according to company's standards
+              </h3>
+            </div>
+          </article>
+
+          <article class="service-item">
+            <div class="service-item__num">02</div>
+            <div class="service-item__body">
+              <h3 class="service-item__title">
+                Expert Engineering and Design services (mechanical, electrical,
+                manufacturing) from <span class="text-brand">ideation to modeling</span>
+                in SolidWorks environment
+              </h3>
+            </div>
+          </article>
+
+          <article class="service-item">
+            <div class="service-item__num">03</div>
+            <div class="service-item__body">
+              <h3 class="service-item__title">
+                Management and Organisation of clients'
+                <span class="text-brand">CAD Library</span> Database
+              </h3>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══ EXPERTISE ══ -->
+    <section id="expertise" class="section-pad expertise-section">
+      <div class="container">
+        <div class="section-header-left">
+          <p class="label">Technical Competency</p>
+          <h2 class="section-title-left">Our Expertise</h2>
+          <p class="section-sub-left">
+            We specialize in Electrical design of Switchgear assemblies and
+            Mechanical Design of Machines and equipment.
+          </p>
+        </div>
+        <div class="expertise-grid">
+
+          <div class="exp-card">
+            <div class="exp-card__icon">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="28" height="28" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M18 6l-8 10h6l-2 10 8-10h-6l2-10z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="exp-card__role">Partner · Electrical Design</span>
+            <h3 class="exp-card__title">Manan Agrawal</h3>
+            <p class="exp-card__desc">
+              Hands-on experience with production of both UL and IEC certified Switchgear
+              assemblies. Has worked with a multi-million dollar North American company
+              serving the data center and EV sectors — bringing global-standard electrical
+              design expertise to every project.
+            </p>
+            <ul class="exp-card__tags">
+              <li>UL &amp; IEC Switchgear</li>
+              <li>Electrical CAD</li>
+              <li>Data Center Infra</li>
+              <li>EV Sector</li>
+            </ul>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-card__icon">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="5" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M16 2v3M16 27v3M2 16h3M27 16h3M5.6 5.6l2.1 2.1M24.3 24.3l2.1 2.1M5.6 26.4l2.1-2.1M24.3 7.7l2.1-2.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="exp-card__role">Partner · Mechanical Design</span>
+            <h3 class="exp-card__title">Rahul Agrawal</h3>
+            <p class="exp-card__desc">
+              More than 30 years of experience managing and running a textile machine
+              manufacturing company. Brings deep mechanical and Design for Manufacturing (DFM)
+              understanding to every project — ensuring designs that work on the shop floor,
+              not just on screen.
+            </p>
+            <ul class="exp-card__tags">
+              <li>SolidWorks 3D</li>
+              <li>DFM / DFA</li>
+              <li>Textile Machinery</li>
+              <li>30+ Yrs Experience</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══ PROJECTS ══ -->
+    <section id="projects" class="section-pad projects-section">
+      <div class="container">
+        <div class="section-header-left">
+          <p class="label">Track Record</p>
+          <h2 class="section-title-left">Ongoing &amp; Delivered Projects</h2>
+          <p class="section-sub-left">
+            Modular Power &amp; Data, Wisconsin, North America
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <div class="project-thumb">
+              <div class="project-thumb__inner">
+                <div class="project-thumb__overlay"></div>
+                <div class="project-thumb__content">
+                  <span class="project-thumb__num">0{i + 1}</span>
+                  <span class="project-thumb__label">Project {i + 1}</span>
+                  <span class="project-thumb__sub">Image coming soon</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <p class="projects-note">
+          Detailed case studies available on request — contact us below.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ══ CLIENTS ══ -->
+    <section id="clients" class="section-pad clients-section">
+      <div class="container">
+        <div class="section-header-left">
+          <p class="label">Who We Work With</p>
+          <h2 class="section-title-left">Clients We Serve</h2>
+          <p class="section-sub-left">
+            We partner with manufacturers, OEMs, and engineering firms across
+            the USA, Canada, Europe, and globally who demand precision, speed, and cost efficiency.
+          </p>
+        </div>
+
+        <div class="clients-grid">
+
+          <div class="client-tile">
+            <div class="client-tile__icon">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 28V14l8-6v6l8-6v6l8-6v20H2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <rect x="12" y="20" width="8" height="8" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h3 class="client-tile__title">Machine Manufacturers</h3>
+            <p class="client-tile__desc">OEMs needing production-ready 3D models, assemblies and drawing packages.</p>
+          </div>
+
+          <div class="client-tile">
+            <div class="client-tile__icon">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 4l-9 13h7l-2 11 9-13h-7l2-11z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="client-tile__title">Electrical Panel Builders</h3>
+            <p class="client-tile__desc">Switchgear manufacturers requiring IEC/UL-compliant CAD documentation and schematics.</p>
+          </div>
+
+          <div class="client-tile">
+            <div class="client-tile__icon">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="6" width="24" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="4" y="14" width="24" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="4" y="22" width="24" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="24" cy="9" r="1.5" fill="currentColor"/>
+                <circle cx="24" cy="17" r="1.5" fill="currentColor"/>
+                <circle cx="24" cy="25" r="1.5" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3 class="client-tile__title">Data Center &amp; EV Sector</h3>
+            <p class="client-tile__desc">Global companies requiring high-precision electrical design support at competitive rates.</p>
+          </div>
+
+          <div class="client-tile">
+            <div class="client-tile__icon">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 8c4 0 4 4 8 4s4-4 8-4 4 4 8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M4 16c4 0 4 4 8 4s4-4 8-4 4 4 8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M4 24c4 0 4-4 8-4s4 4 8 4 4-4 8-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="client-tile__title">Textile &amp; Fabric Industry</h3>
+            <p class="client-tile__desc">Fabric processing companies requiring machinery design and upgrades.</p>
+          </div>
+
+          <div class="client-tile">
+            <div class="client-tile__icon">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 4c6 0 12 4 12 10 0 4-2 7-5 9l1 5H8l1-5c-3-2-5-5-5-9C4 8 10 4 16 4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="client-tile__title">Product Startups</h3>
+            <p class="client-tile__desc">Early-stage product companies needing fast, affordable CAD and DFM engineering support.</p>
+          </div>
+
+          <div class="client-tile">
+            <div class="client-tile__icon">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M4 16h24M16 4c-3 4-4 8-4 12s1 8 4 12M16 4c3 4 4 8 4 12s-1 8-4 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="client-tile__title">International Engineering Firms</h3>
+            <p class="client-tile__desc">North American and European firms leveraging our team for 24/7 design continuity.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══ WHY CHOOSE US — Dark contrast section ══ -->
+    <section id="why-us" class="section-pad whyus-section">
+      <div class="container">
+
+        <div class="whyus-header-row">
+          <div class="whyus-header-text">
+            <p class="label whyus-label">Our Edge</p>
+            <h2 class="whyus-heading">Why Choose Us</h2>
+            <p class="whyus-sub">
+              The RMR Innotech advantage — where global quality meets India-scale economics.
+            </p>
+          </div>
+          <a href="#contact" class="btn-primary whyus-cta">
+            Start a Project &rarr;
+          </a>
+        </div>
+
+        <div class="whyus-cards">
+
+          <div class="whyus-card">
+            <div class="whyus-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="whyus-card__title">Cost Advantage</h3>
+            <p class="whyus-card__desc">
+              Significantly lower engineering costs vs North American and European rates —
+              without any compromise on quality or standards.
+            </p>
+          </div>
+
+          <div class="whyus-card">
+            <div class="whyus-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="whyus-card__title">24 Hr Engineering</h3>
+            <p class="whyus-card__desc">
+              India time zone means we work while you sleep. Submit work end-of-day,
+              receive results start-of-day.
+            </p>
+          </div>
+
+          <div class="whyus-card">
+            <div class="whyus-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 2L4.5 13.5H11L9 22l10.5-11.5H13L13 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="whyus-card__title">Faster Turnaround</h3>
+            <p class="whyus-card__desc">
+              Rapid delivery gives you a competitive edge — faster iteration cycles,
+              shorter time-to-production, quicker bids.
+            </p>
+          </div>
+
+          <div class="whyus-card">
+            <div class="whyus-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="3" width="9" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="13" y="3" width="9" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="2" y="14" width="9" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="13" y="14" width="9" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h3 class="whyus-card__title">Dual Expertise</h3>
+            <p class="whyus-card__desc">
+              One team covers both Mechanical and Electrical design — no need to coordinate
+              multiple vendors for integrated projects.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══ CONTACT ══ -->
+    <section id="contact" class="section-pad contact-section">
+      <div class="container">
+        <div class="section-header-left">
+          <p class="label">Get In Touch</p>
+          <h2 class="section-title-left">Contact Us</h2>
+          <p class="section-sub-left">
+            Ready to start your next engineering project? Reach out to our partners directly.
+          </p>
+        </div>
+        <div class="contact-grid">
+
+          <address class="contact-card">
+            <span class="contact-card__role">Partner</span>
+            <strong class="contact-card__name">Manan Agrawal</strong>
+            <a href="mailto:manan@rmrinnotech.com" class="contact-card__email">manan@rmrinnotech.com</a>
+            <a href="tel:+919904212974" class="contact-card__phone">+91 99042 12974</a>
+          </address>
+
+          <address class="contact-card">
+            <span class="contact-card__role">Partner</span>
+            <strong class="contact-card__name">Rahul Agrawal</strong>
+            <a href="mailto:rahul@rmrinnotech.com" class="contact-card__email">rahul@rmrinnotech.com</a>
+            <a href="tel:+919824112974" class="contact-card__phone">+91 98241 12974</a>
+          </address>
+
+          <address class="contact-card contact-card--address">
+            <span class="contact-card__role">Office</span>
+            <strong class="contact-card__name">RMR Innotech LLP</strong>
+            <p class="contact-card__address">
+              Plot No. 7125, Road No. 71,<br />
+              G.I.D.C. Sachin,<br />
+              Surat – 394230,<br />
+              Gujarat, India
+            </p>
+          </address>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="cad-footer">
+    <div class="cad-footer__inner">
+      <span class="cad-footer__copy">
+        &copy; {year} RMR Innotech LLP &nbsp;&middot;&nbsp; Engineering CAD Services &amp; Industrial Turnkey Solutions
+      </span>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/power">Power Distribution</a>
+        <a href="/fabric">Fabric Machineries</a>
+        <a href="/furnaces">Furnaces</a>
+      </nav>
+    </div>
+  </footer>
+
+</Layout>
+
+
+<style>
+
+  /* ── Base ─────────────────────────────────────────────── */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.85rem 2rem;
+    background: var(--color-brand);
+    color: #fff;
+    border: 2px solid var(--color-brand);
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    border-radius: 2px;
+  }
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--color-brand);
+  }
+
+  /* ══ NAV ══════════════════════════════════════════════ */
+  .cad-nav__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    position: relative;
+  }
+
+  .cad-nav__brand { display: flex; align-items: center; flex-shrink: 0; }
+  .nav-logo { height: 36px; width: auto; object-fit: contain; }
+
+  .cad-nav__menu {
+    display: flex;
+    list-style: none;
+    margin: 0; padding: 0;
+    gap: 0.15rem;
+    align-items: center;
+  }
+
+  .cad-nav__link {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--color-text);
+    padding: 0.4rem 0.6rem;
+    transition: color 0.18s;
+    white-space: nowrap;
+  }
+  .cad-nav__link:hover { color: var(--color-brand); }
+  .cad-nav__link--cta {
+    background: var(--color-brand);
+    color: #fff !important;
+    padding: 0.4rem 0.9rem;
+    border-radius: 2px;
+  }
+  .cad-nav__link--cta:hover { background: var(--color-brand-dark); }
+
+  .nav-check { display: none; }
+  .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--color-heading); transition: 0.2s; }
+
+  .cad-nav__mobile {
+    display: none;
+    position: absolute;
+    top: 60px; left: 0; right: 0;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    list-style: none;
+    margin: 0; padding: 1rem 2rem;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 99;
+  }
+  .cad-nav__mobile a {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-heading);
+  }
+
+  @media (max-width: 960px) {
+    .cad-nav__menu { display: none; }
+    .nav-toggle { display: flex; }
+    .nav-check:checked ~ .cad-nav__mobile { display: flex; }
+  }
+
+
+  /* ══ SECTION HEADERS ══════════════════════════════════ */
+  .section-header-left { max-width: 540px; margin-bottom: 3.5rem; }
+
+  .section-title-left {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .section-sub-left {
+    color: var(--color-mid);
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+
+  /* ══ HERO ══════════════════════════════════════════════ */
+  .cad-hero {
+    border-bottom: 1px solid var(--color-border-muted);
+    background-color: var(--color-section-hero, var(--color-bg));
+  }
+
+  .cad-hero__copy { max-width: 680px; }
+
+  .cad-hero__heading {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    text-transform: uppercase;
+    line-height: 1.0;
+    color: var(--color-heading);
+    margin-bottom: 1rem;
+  }
+  .cad-hero__heading em { font-style: normal; color: var(--color-brand); }
+
+  .cad-hero__intro {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-top: 1.5rem;
+  }
+
+
+  /* ══ SERVICES ══════════════════════════════════════════ */
+  .services-section { background: var(--color-section-verticals, var(--color-bg-raised)); }
+
+  .services-list {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-border);
+  }
+
+  .service-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 2rem;
+    padding: 3rem 2.5rem;
+    background: var(--color-surface, var(--color-bg));
+    border-bottom: 1px solid var(--color-border-muted);
+    transition: box-shadow 0.2s;
+  }
+  .service-item:last-child { border-bottom: none; }
+  .service-item:hover { box-shadow: inset 4px 0 0 var(--color-brand); }
+
+  :global(.orange) .service-item { background: #ffffff; }
+  :global(.orange) .service-item__num { color: #1a1a1a; }
+  :global(.orange) .service-item__title { color: #0d0d0d; }
+  :global(.orange) .service-item { border-bottom-color: rgba(0,0,0,0.08); }
+  :global(.orange) .services-list { border-color: rgba(0,0,0,0.12); }
+
+  @media (max-width: 600px) {
+    .service-item { grid-template-columns: 1fr; gap: 0.75rem; padding: 2rem 1.5rem; }
+  }
+
+  .service-item__num {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--color-brand);
+    padding-top: 0.35rem;
+  }
+
+  .service-item__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    line-height: 1.3;
+    color: var(--color-heading);
+  }
+
+
+  /* ══ EXPERTISE ══════════════════════════════════════════ */
+  .expertise-section { background: var(--color-section-trust, var(--color-bg)); }
+
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5px;
+    background: var(--color-border);
+    border: 1.5px solid var(--color-border);
+  }
+  @media (max-width: 768px) {
+    .expertise-grid { grid-template-columns: 1fr; gap: 0; }
+  }
+
+  .exp-card {
+    background: var(--color-surface, var(--color-bg));
+    padding: 2.5rem;
+    transition: background 0.2s;
+  }
+  .exp-card:hover { background: var(--color-surface-raised); }
+  .exp-card:hover .exp-card__title { color: var(--color-brand); }
+
+  .exp-card__icon svg {
+    width: 32px; height: 32px;
+    stroke: var(--color-brand);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  .exp-card__role {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-brand);
+    margin-bottom: 0.4rem;
+  }
+
+  .exp-card__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    transition: color 0.2s;
+  }
+
+  .exp-card__desc {
+    font-size: 0.88rem;
+    color: var(--color-mid);
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+
+  .exp-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0; margin: 0;
+  }
+  .exp-card__tags li {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    border: 1px solid rgba(232,101,26,0.3);
+    color: var(--color-brand);
+    background: rgba(232,101,26,0.04);
+  }
+
+
+  /* ══ PROJECTS — FIXED ══════════════════════════════════ */
+  .projects-section {
+    background: var(--color-section-hero, var(--color-bg));
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--color-border);
+    border: 1.5px solid var(--color-border);
+    margin-bottom: 2rem;
+  }
+  @media (max-width: 768px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .projects-grid { grid-template-columns: 1fr; } }
+
+  /* KEY FIX: explicit height + visible background so cards show */
+  .project-thumb {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .project-thumb__inner {
+    width: 100%;
+    height: 100%;
+    background: var(--color-bg-raised);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.25s;
+    position: relative;
+  }
+
+  /* Grid overlay */
+  .project-thumb__overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(232,101,26,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(232,101,26,0.07) 1px, transparent 1px);
+    background-size: 24px 24px;
+    pointer-events: none;
+  }
+
+  .project-thumb__content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    text-align: center;
+  }
+
+  .project-thumb__num {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 3rem;
+    line-height: 1;
+    color: rgba(232,101,26,0.15);
+  }
+
+  .project-thumb__label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-brand);
+    background: var(--color-bg);
+    padding: 0.35rem 0.8rem;
+    border: 1px solid var(--color-brand);
+  }
+
+  .project-thumb__sub {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-mid);
+    opacity: 0.7;
+  }
+
+  .project-thumb:hover .project-thumb__inner {
+    background: var(--color-surface);
+    outline: 1px solid var(--color-brand);
+  }
+
+  .projects-note {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.07em;
+    color: var(--color-mid);
+    text-align: center;
+  }
+
+
+  /* ══ CLIENTS — distinct bg from projects ══════════════ */
+  .clients-section {
+    background: var(--color-section-verticals, var(--color-bg-raised));
+  }
+
+  .clients-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--color-border);
+    border: 1.5px solid var(--color-border);
+  }
+  @media (max-width: 900px) { .clients-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 500px) { .clients-grid { grid-template-columns: 1fr; } }
+
+  .client-tile {
+    background: var(--color-surface, var(--color-bg));
+    padding: 2rem 1.75rem;
+    transition: background 0.2s, box-shadow 0.2s;
+  }
+  .client-tile:hover {
+    background: var(--color-surface-raised);
+    box-shadow: inset 0 -3px 0 var(--color-brand);
+  }
+  .client-tile:hover .client-tile__title { color: var(--color-brand); }
+
+  .client-tile__icon svg {
+    width: 28px; height: 28px;
+    stroke: var(--color-brand);
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .client-tile__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    transition: color 0.2s;
+    color: var(--color-heading);
+  }
+
+  .client-tile__desc {
+    font-size: 0.82rem;
+    color: var(--color-mid);
+    line-height: 1.7;
+  }
+
+
+  /* ══ WHY CHOOSE US — bold contrast section ════════════ */
+  .whyus-section {
+    background: var(--color-section-footer, #0f0f0f);
+    color: var(--whyus-text, #fff);
+  }
+
+  /* In orange mode, use a dark background so this section still pops */
+  :global(.orange) .whyus-section {
+    background: #1a1a1a;
+  }
+
+  /* label override */
+  .whyus-label { color: var(--color-brand) !important; }
+
+  .whyus-header-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 3.5rem;
+    flex-wrap: wrap;
+  }
+
+  .whyus-heading {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 0.75rem;
+  }
+
+  .whyus-sub {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.5);
+    max-width: 400px;
+    line-height: 1.6;
+  }
+
+  .whyus-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5px;
+    background: rgba(255,255,255,0.08);
+    border: 1.5px solid rgba(255,255,255,0.08);
+  }
+  @media (max-width: 900px) { .whyus-cards { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .whyus-cards { grid-template-columns: 1fr; } }
+
+  .whyus-card {
+    background: rgba(255,255,255,0.04);
+    padding: 2.5rem 2rem;
+    transition: background 0.2s;
+  }
+  .whyus-card:hover { background: rgba(255,255,255,0.08); }
+  .whyus-card:hover .whyus-card__title { color: var(--color-brand); }
+
+  .whyus-card__icon {
+    width: 44px; height: 44px;
+    background: rgba(232,101,26,0.12);
+    border: 1px solid rgba(232,101,26,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  .whyus-card__icon svg {
+    width: 20px; height: 20px;
+    stroke: var(--color-brand);
+  }
+
+  .whyus-card__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 0.75rem;
+    transition: color 0.2s;
+  }
+
+  .whyus-card__desc {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.75;
+  }
+
+
+  /* ══ CONTACT ══════════════════════════════════════════ */
+  .contact-section { background: var(--color-section-trust, var(--color-bg)); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--color-border);
+    border: 1.5px solid var(--color-border);
+  }
+  @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 0; } }
+
+  .contact-card {
+    background: var(--color-surface, var(--color-bg));
+    padding: 2.5rem 2rem;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    transition: background 0.2s;
+  }
+  .contact-card:hover { background: var(--color-surface-raised, var(--color-bg-raised)); }
+
+  .contact-card__role {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-brand);
+  }
+  .contact-card__name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    color: var(--color-heading);
+  }
+  .contact-card__email,
+  .contact-card__phone {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--color-mid);
+    transition: color 0.18s;
+  }
+  .contact-card__email:hover,
+  .contact-card__phone:hover { color: var(--color-brand); }
+
+  .contact-card--address .contact-card__address {
+    font-size: 0.85rem;
+    color: var(--color-mid);
+    line-height: 1.9;
+    margin: 0;
+  }
+
+
+  /* ══ FOOTER ══════════════════════════════════════════ */
+  .cad-footer {
+    background: var(--color-section-footer, #000);
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .cad-footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .cad-footer__copy {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.07em;
+    color: rgba(255,255,255,0.2);
+  }
+  .cad-footer__inner nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .cad-footer__inner nav a {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    transition: color 0.18s;
+  }
+  .cad-footer__inner nav a:hover { color: var(--color-brand); }
+
+  @media (max-width: 600px) {
+    .cad-footer__inner { flex-direction: column; text-align: center; }
+    .cad-footer__inner nav { justify-content: center; }
+  }
+
+
+  /* ══════════════════════════════════════════════════════════
+     ORANGE THEME OVERRIDES
+     All cards go white; accents use real brand orange #e8651a
+     so text/icons remain legible on the vivid orange bg.
+  ══════════════════════════════════════════════════════════ */
+
+  /* Section labels + rule-brand — use real orange not #1a1a1a */
+  :global(.orange) .label          { color: rgba(0,0,0,0.50); }
+  :global(.orange) .rule-brand     { background: #e8651a; }
+  :global(.orange) .section-sub-left { color: rgba(0,0,0,0.60); }
+
+  /* Hero */
+  :global(.orange) .cad-hero__heading       { color: #0d0d0d; }
+  :global(.orange) .cad-hero__heading em    { color: #fff; }
+  :global(.orange) .cad-hero__intro         { color: rgba(0,0,0,0.75); }
+  :global(.orange) .btn-primary             { background: #fff; border-color: #fff; color: #1a1a1a; }
+  :global(.orange) .btn-primary:hover       { background: transparent; border-color: #fff; color: #fff; }
+
+  /* Nav CTA */
+  :global(.orange) .cad-nav__link--cta             { background: #e8651a; color: #fff !important; }
+  :global(.orange) .cad-nav__link--cta:hover       { background: #c4520e; }
+
+  /* Expertise cards — white */
+  :global(.orange) .expertise-grid          { background: rgba(0,0,0,0.12); border-color: rgba(0,0,0,0.12); }
+  :global(.orange) .exp-card                { background: #ffffff; }
+  :global(.orange) .exp-card:hover          { background: #f7f7f7; }
+  :global(.orange) .exp-card__icon svg      { stroke: #e8651a; }
+  :global(.orange) .exp-card__role          { color: #e8651a; }
+  :global(.orange) .exp-card__title         { color: #0d0d0d; }
+  :global(.orange) .exp-card:hover .exp-card__title { color: #e8651a; }
+  :global(.orange) .exp-card__desc          { color: #555; }
+  :global(.orange) .exp-card__tags li       { color: #e8651a; border-color: rgba(232,101,26,0.35); background: rgba(232,101,26,0.06); }
+
+  /* Projects — white thumb cards */
+  :global(.orange) .projects-grid           { background: rgba(0,0,0,0.12); border-color: rgba(0,0,0,0.12); }
+  :global(.orange) .project-thumb__inner    { background: #ffffff; }
+  :global(.orange) .project-thumb:hover .project-thumb__inner { background: #f5f5f5; outline-color: #e8651a; }
+  :global(.orange) .project-thumb__overlay  {
+    background-image:
+      linear-gradient(rgba(232,101,26,0.10) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(232,101,26,0.10) 1px, transparent 1px);
+  }
+  :global(.orange) .project-thumb__label    { color: #e8651a; background: #fff; border-color: #e8651a; }
+  :global(.orange) .project-thumb__sub      { color: #888; }
+  :global(.orange) .projects-note           { color: rgba(0,0,0,0.50); }
+
+  /* Clients — white tiles */
+  :global(.orange) .clients-grid            { background: rgba(0,0,0,0.12); border-color: rgba(0,0,0,0.12); }
+  :global(.orange) .client-tile             { background: #ffffff; }
+  :global(.orange) .client-tile:hover       { background: #f7f7f7; box-shadow: inset 0 -3px 0 #e8651a; }
+  :global(.orange) .client-tile__icon svg   { stroke: #e8651a; }
+  :global(.orange) .client-tile__title      { color: #0d0d0d; }
+  :global(.orange) .client-tile:hover .client-tile__title { color: #e8651a; }
+  :global(.orange) .client-tile__desc       { color: #555; }
+
+  /* Why Choose Us — already dark bg; fix brand orange for icons/hovers */
+  :global(.orange) .whyus-label             { color: #e8651a !important; }
+  :global(.orange) .whyus-card__icon        { background: rgba(232,101,26,0.15); border-color: rgba(232,101,26,0.4); }
+  :global(.orange) .whyus-card__icon svg    { stroke: #e8651a; }
+  :global(.orange) .whyus-card:hover .whyus-card__title { color: #e8651a; }
+
+  /* Contact — white cards */
+  :global(.orange) .contact-grid            { background: rgba(0,0,0,0.12); border-color: rgba(0,0,0,0.12); }
+  :global(.orange) .contact-card            { background: #ffffff; }
+  :global(.orange) .contact-card:hover      { background: #f7f7f7; }
+  :global(.orange) .contact-card__role      { color: #e8651a; }
+  :global(.orange) .contact-card__name      { color: #0d0d0d; }
+  :global(.orange) .contact-card__email,
+  :global(.orange) .contact-card__phone     { color: #555; }
+  :global(.orange) .contact-card__email:hover,
+  :global(.orange) .contact-card__phone:hover { color: #e8651a; }
+  :global(.orange) .contact-card--address .contact-card__address { color: #555; }
+
+</style>

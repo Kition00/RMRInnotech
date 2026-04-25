@@ -1,0 +1,407 @@
+---
+/**
+ * src/components/VerticalCard.astro
+ * ─────────────────────────────────────────────────────────────
+ * Business Vertical Card — "Industrial Pop" Aesthetic
+ *
+ * Design language:
+ *  • Bento-box layout: defined sections (accent bar, icon zone,
+ *    content zone, CTA zone) separated by hairline rules.
+ *  • High-depth shadows with an orange penumbra on hover.
+ *  • CAD/blueprint grid overlay on hover (SVG data-URI, low opacity).
+ *  • Icon scales + rotates slightly on card focus / hover.
+ *  • Pure CSS transitions — no client-side JS required.
+ *    → Astro renders this as 100% static HTML. ✓
+ *
+ * Performance notes:
+ *  • No `client:*` directive needed — zero JavaScript payload.
+ *  • The hover CAD grid is a CSS background pattern (no image fetch).
+ *  • Icon animation is GPU-composited (transform + opacity only).
+ *
+ * Props:
+ *  icon      — SVG markup string (inner content of <svg>)
+ *  iconLabel — accessible label for the icon (aria-label)
+ *  tag       — mono-spaced category label (e.g. "01 / Power")
+ *  title     — card heading
+ *  body      — short description paragraph
+ *  href      — link destination
+ *  cta       — call-to-action link text (default: "Learn more →")
+ *  accentHue — optional hue override for accent bar (default: brand orange)
+ * ─────────────────────────────────────────────────────────────
+ */
+
+export interface Props {
+  icon:       string;   // Raw SVG path/shape markup (placed inside a 48×48 <svg>)
+  iconLabel:  string;
+  tag:        string;   // e.g. "01 / Power Distribution"
+  title:      string;
+  body:       string;
+  href:       string;
+  cta?:       string;
+  /** Optional: CSS color for the accent bar. Defaults to brand orange. */
+  accentColor?: string;
+}
+
+const {
+  icon,
+  iconLabel,
+  tag,
+  title,
+  body,
+  href,
+  cta = 'Explore vertical →',
+  accentColor = 'var(--color-brand, #e8651a)',
+} = Astro.props;
+
+// Unique ID for ARIA relationship
+const headingId = `vc-${tag.replace(/\W+/g, '-').toLowerCase()}`;
+---
+
+<article
+  class="vertical-card"
+  style={`--card-accent: ${accentColor};`}
+  aria-labelledby={headingId}
+>
+  <!-- ── Accent Bar (top hairline, thickens on hover) ─── -->
+  <span class="card-accent-bar" aria-hidden="true"></span>
+
+  <!-- ── Icon Zone ────────────────────────────────────── -->
+  <div class="card-icon-zone">
+    <div class="card-icon-wrap" aria-label={iconLabel} role="img">
+      <!-- Icon SVG — caller supplies inner shapes only -->
+      <svg
+        class="card-icon"
+        width="48"
+        height="48"
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        set:html={icon}
+      />
+    </div>
+
+    <!-- Tag label sits beside the icon -->
+    <span class="card-tag">{tag}</span>
+  </div>
+
+  <!-- ── Content Zone ─────────────────────────────────── -->
+  <div class="card-content">
+    <h3 id={headingId} class="card-title">{title}</h3>
+    <p class="card-body">{body}</p>
+  </div>
+
+  <!-- ── Divider ──────────────────────────────────────── -->
+  <span class="card-divider" aria-hidden="true"></span>
+
+  <!-- ── CTA Zone ─────────────────────────────────────── -->
+  <div class="card-cta-zone">
+    <a href={href} class="card-cta" aria-label={`${cta} — ${title}`}>
+      {cta}
+    </a>
+    <!-- Corner bracket ornament (pure CSS) -->
+    <span class="cta-bracket" aria-hidden="true"></span>
+  </div>
+
+  <!-- CAD Grid overlay (revealed on hover via opacity transition) -->
+  <span class="cad-overlay" aria-hidden="true"></span>
+</article>
+
+<style>
+  /* ════════════════════════════════════════════════════════
+     VERTICAL CARD — Industrial Pop
+  ════════════════════════════════════════════════════════ */
+
+  .vertical-card {
+    /* Layout */
+    position:       relative;
+    display:        flex;
+    flex-direction: column;
+    overflow:       hidden;
+
+    /* Palette — light mode defaults */
+    --c-bg:         #ffffff;
+    --c-border:     rgba(0, 0, 0, 0.10);
+    --c-title:      var(--color-dark, #111111);
+    --c-body:       var(--color-charcoal, #333333);
+    --c-tag:        var(--color-mid, #888888);
+    --c-cta:        var(--card-accent);
+    --c-divider:    rgba(0,0,0,0.08);
+    --c-shadow-a:   rgba(0,0,0,0.06);
+    --c-shadow-b:   rgba(0,0,0,0.04);
+    --c-icon:       var(--color-charcoal, #333333);
+    --c-cad-line:   rgba(232, 101, 26, 0.08);  /* orange CAD grid */
+
+    background:     var(--c-bg);
+    border:         1.5px solid var(--c-border);
+    border-radius:  2px;  /* Industrial: near-zero radius */
+    padding:        0;    /* Bento sections own their padding */
+
+    box-shadow:
+      0  4px 12px var(--c-shadow-a),
+      0  1px  3px var(--c-shadow-b);
+
+    /* Smooth transitions for hover state */
+    transition:
+      transform    0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      box-shadow   0.28s ease,
+      border-color 0.28s ease;
+  }
+
+  /* ── Dark mode palette ───────────────────────────────── */
+  :global(.dark) .vertical-card {
+    --c-bg:       #1a1a1a;
+    --c-border:   rgba(255,255,255,0.08);
+    --c-title:    #f4f4f5;
+    --c-body:     #aaaaaa;
+    --c-tag:      #666666;
+    --c-divider:  rgba(255,255,255,0.06);
+    --c-shadow-a: rgba(0,0,0,0.4);
+    --c-shadow-b: rgba(0,0,0,0.25);
+    --c-icon:     #cccccc;
+    --c-cad-line: rgba(232, 101, 26, 0.12);
+  }
+
+  /* ── Hover: lift + deep orange shadow ───────────────── */
+  .vertical-card:hover,
+  .vertical-card:focus-within {
+    transform:    translateY(-6px) scale(1.005);
+    border-color: var(--card-accent);
+    box-shadow:
+      0  0   0   1px var(--card-accent),
+      0  20px 40px rgba(232,101,26,0.18),
+      0  8px  16px rgba(0,0,0,0.12);
+  }
+
+  /* ════════════════════════════════════════════════════════
+     CAD GRID OVERLAY
+     Technical blueprint pattern — SVG inline data URI
+     Grid lines are orange at low opacity; revealed on hover.
+  ════════════════════════════════════════════════════════ */
+  .cad-overlay {
+    position:   absolute;
+    inset:      0;
+    pointer-events: none;
+    z-index:    1;
+    opacity:    0;
+    transition: opacity 0.35s ease;
+
+    /* ── CAD grid via CSS background (no external image) ──
+       Two layers:
+        1) Fine 16px grid — thin lines
+        2) Major 80px grid — slightly thicker lines
+       Both use the card's --c-cad-line colour token.
+    ─────────────────────────────────────────────────────── */
+    background-image:
+      /* Minor grid */
+      linear-gradient(var(--c-cad-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--c-cad-line) 1px, transparent 1px),
+      /* Major grid */
+      linear-gradient(rgba(232,101,26,0.14) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(232,101,26,0.14) 1px, transparent 1px);
+    background-size:
+      16px 16px,
+      16px 16px,
+      80px 80px,
+      80px 80px;
+    background-position: -0.5px -0.5px;
+
+    /* Fade out at edges for depth */
+    -webkit-mask-image: radial-gradient(
+      ellipse 90% 90% at 50% 50%,
+      black 30%, transparent 100%
+    );
+    mask-image: radial-gradient(
+      ellipse 90% 90% at 50% 50%,
+      black 30%, transparent 100%
+    );
+  }
+
+  .vertical-card:hover .cad-overlay,
+  .vertical-card:focus-within .cad-overlay {
+    opacity: 1;
+  }
+
+  /* ════════════════════════════════════════════════════════
+     ACCENT BAR
+  ════════════════════════════════════════════════════════ */
+  .card-accent-bar {
+    display:    block;
+    height:     3px;
+    background: var(--card-accent);
+    transform-origin: left center;
+    transform:  scaleX(0.35);
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    flex-shrink: 0;
+  }
+
+  .vertical-card:hover .card-accent-bar,
+  .vertical-card:focus-within .card-accent-bar {
+    transform: scaleX(1);
+  }
+
+  /* ════════════════════════════════════════════════════════
+     ICON ZONE
+  ════════════════════════════════════════════════════════ */
+  .card-icon-zone {
+    display:     flex;
+    align-items: center;
+    gap:         1rem;
+    padding:     1.5rem 1.5rem 1rem;
+    position:    relative;
+    z-index:     2;
+  }
+
+  .card-icon-wrap {
+    /* Industrial bracket frame */
+    position:      relative;
+    flex-shrink:   0;
+    width:         56px;
+    height:        56px;
+    display:       flex;
+    align-items:   center;
+    justify-content: center;
+    border:        1.5px solid var(--c-border);
+    background:    transparent;
+    transition:    border-color 0.25s ease, background 0.25s ease;
+  }
+
+  /* Corner notch — top-right clipped corner for industrial feel */
+  .card-icon-wrap::after {
+    content:    '';
+    position:   absolute;
+    top:        -1.5px;
+    right:      -1.5px;
+    width:      10px;
+    height:     10px;
+    background: var(--c-bg);
+    clip-path:  polygon(100% 0, 0 0, 100% 100%);
+    transition: background 0.25s ease;
+  }
+
+  .vertical-card:hover .card-icon-wrap {
+    border-color: var(--card-accent);
+    background:   rgba(232,101,26,0.06);
+  }
+
+  /* ── Icon animation: scale + rotate on hover ─────────── */
+  .card-icon {
+    color:      var(--c-icon);
+    transition:
+      transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+      color     0.25s ease;
+    will-change: transform;
+  }
+
+  .vertical-card:hover .card-icon,
+  .vertical-card:focus-within .card-icon {
+    transform: scale(1.18) rotate(8deg);
+    color:     var(--card-accent);
+  }
+
+  .card-tag {
+    font-family:    var(--font-mono, monospace);
+    font-size:      0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color:          var(--c-tag);
+    transition:     color 0.25s ease;
+  }
+
+  .vertical-card:hover .card-tag {
+    color: var(--card-accent);
+  }
+
+  /* ════════════════════════════════════════════════════════
+     CONTENT ZONE
+  ════════════════════════════════════════════════════════ */
+  .card-content {
+    flex:    1;
+    padding: 0 1.5rem 1.25rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .card-title {
+    font-family:    var(--font-display, 'Barlow Condensed', sans-serif);
+    font-size:      1.35rem;
+    font-weight:    700;
+    letter-spacing: -0.01em;
+    line-height:    1.15;
+    color:          var(--c-title);
+    margin:         0 0 0.6rem;
+    text-transform: uppercase;
+  }
+
+  .card-body {
+    font-family: var(--font-body, 'Barlow', sans-serif);
+    font-size:   0.88rem;
+    line-height: 1.7;
+    color:       var(--c-body);
+    margin:      0;
+  }
+
+  /* ════════════════════════════════════════════════════════
+     DIVIDER
+  ════════════════════════════════════════════════════════ */
+  .card-divider {
+    display:     block;
+    height:      1px;
+    margin:      0 1.5rem;
+    background:  var(--c-divider);
+    flex-shrink: 0;
+  }
+
+  /* ════════════════════════════════════════════════════════
+     CTA ZONE
+  ════════════════════════════════════════════════════════ */
+  .card-cta-zone {
+    position:    relative;
+    display:     flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:     0.9rem 1.5rem;
+    z-index:     2;
+  }
+
+  .card-cta {
+    font-family:    var(--font-mono, monospace);
+    font-size:      0.72rem;
+    font-weight:    600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color:          var(--c-cta);
+    text-decoration: none;
+    transition:     letter-spacing 0.2s ease, opacity 0.2s ease;
+  }
+
+  /* Full-card linked area — the <a> inside expands clickability */
+  .card-cta::before {
+    content:  '';
+    position: absolute;
+    inset:    0;
+  }
+
+  .vertical-card:hover .card-cta {
+    letter-spacing: 0.2em;
+    opacity: 0.9;
+  }
+
+  /* ── Corner bracket ornament ─────────────────────────── */
+  .cta-bracket {
+    width:       14px;
+    height:      14px;
+    border-right:  2px solid var(--card-accent);
+    border-bottom: 2px solid var(--card-accent);
+    opacity:     0.4;
+    transition:  opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .vertical-card:hover .cta-bracket {
+    opacity:   1;
+    transform: translate(2px, 2px);
+  }
+</style>

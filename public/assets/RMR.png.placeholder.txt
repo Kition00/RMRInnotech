@@ -1,0 +1,2 @@
+Place your RMR Innotech logo image here as RMR.png
+Recommended: SVG or PNG, ~200px wide, transparent background

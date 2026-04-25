@@ -1,0 +1,83 @@
+---
+/**
+ * src/components/SEO.astro
+ */
+
+export interface Props {
+  title:        string;
+  description:  string;
+  canonicalURL: URL | string;
+  keywords?:    string;
+  ogImage?:     string;
+  type?:        'website' | 'article';
+}
+
+const {
+  title,
+  description,
+  canonicalURL,
+  keywords    = 'industrial engineering, turnkey solutions, switchgear manufacturing, CAD services',
+  ogImage     = '/og-default.png',
+  type        = 'website',
+} = Astro.props;
+
+const canonical = typeof canonicalURL === 'string' ? canonicalURL : canonicalURL.href;
+const siteName  = 'RMR Innotech';
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport"    content="width=device-width, initial-scale=1" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="keywords"    content={keywords} />
+<meta name="author"      content={siteName} />
+<meta name="robots"      content="index, follow" />
+<link rel="canonical"    href={canonical} />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+
+<meta property="og:type"        content={type} />
+<meta property="og:url"         content={canonical} />
+<meta property="og:title"       content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image"       content={ogImage} />
+<meta property="og:site_name"   content={siteName} />
+<meta property="og:locale"      content="en_IN" />
+
+<meta name="twitter:card"        content="summary_large_image" />
+<meta name="twitter:title"       content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image"       content={ogImage} />
+
+<script type="application/ld+json">
+  {JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "RMR Innotech LLP",
+    "url": "https://rmrinnotech.com",
+    "logo": "https://rmrinnotech.com/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Plot No. 7125, Road No. 71, G.I.D.C. Sachin",
+      "addressLocality": "Surat",
+      "addressRegion": "Gujarat",
+      "postalCode": "394230",
+      "addressCountry": "IN"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+91-99042-12974",
+        "contactType": "Sales",
+        "name": "Manan Agrawal"
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+91-98241-12974",
+        "contactType": "Sales",
+        "name": "Rahul Agrawal"
+      }
+    ]
+  })}
+</script>

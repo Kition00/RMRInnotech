@@ -1,0 +1,321 @@
+/* ============================================================
+   global.css — RMR Innotech
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800&family=Barlow:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ══════════════════════════════════════════════════════════════
+   LIGHT MODE TOKENS (default / :root)
+   ══════════════════════════════════════════════════════════════ */
+:root {
+  /* Brand */
+  --color-brand:        #e8651a;
+  --color-brand-dark:   #c4520e;
+  --color-brand-glow:   #f07c35;
+
+  /* Basic Colors */
+  --color-black:        #000000;
+  --color-white:        #ffffff;
+
+  /* Semantic surface tokens */
+  --color-bg:           #ffffff;
+  --color-bg-raised:    #f4f4f5;
+  --color-surface:      #ffffff;
+  --color-surface-raised:#f4f4f5;
+  --color-border:       rgba(0, 0, 0, 0.10);
+  --color-border-muted: rgba(0, 0, 0, 0.05);
+
+  /* Text tokens */
+  --color-text:         #333333;
+  --color-text-muted:   #777777;
+  --color-heading:      #111111;
+  --color-mid:          #777777;  /* FIX: was missing — used by .label and other helpers */
+
+  /* Typography scale */
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body:    'Barlow', sans-serif;
+  --font-mono:    'IBM Plex Mono', monospace;
+
+  /* Dot pattern vars — light mode */
+  --dot-color:  rgba(0, 0, 0, 0.07);
+  --dot-size:   1.5px;
+  --dot-space:  28px;
+
+  /* Toggle colors */
+  --toggle-bg:     rgba(0, 0, 0, 0.03);
+  --toggle-border: rgba(0, 0, 0, 0.1);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   DARK MODE TOKENS
+   ══════════════════════════════════════════════════════════════ */
+.dark {
+  /* Semantic surfaces — layered blacks/grays so sections feel distinct */
+  --color-bg:            #0d0d0d;   /* deepest base — hero bg */
+  --color-bg-raised:     #181818;   /* trust strip, elevated areas */
+  --color-surface:       #141414;   /* cards base */
+  --color-surface-raised:#202020;   /* card hover / raised panels */
+  --color-border:        rgba(255, 255, 255, 0.08);
+  --color-border-muted:  rgba(255, 255, 255, 0.04);
+
+  /* Section-specific surface tokens */
+  --color-section-hero:      #0d0d0d;   /* pure near-black */
+  --color-section-verticals: #111111;   /* step up — dark charcoal */
+  --color-section-trust:     #1a1a1a;   /* mid gray-black */
+  --color-section-footer:    #0a0a0a;   /* very dark, grounding */
+
+  /* Text tokens */
+  --color-text:         #c8c8c8;
+  --color-text-muted:   #808080;
+  --color-heading:      #f0f0f0;
+  --color-mid:          #808080;
+
+  /* Dot pattern */
+  --dot-color:  rgba(255, 255, 255, 0.04);
+
+  /* Toggle */
+  --toggle-bg:     rgba(255,255,255,0.05);
+  --toggle-border: rgba(255,255,255,0.1);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ORANGE THEME TOKENS  (#F16222 background)
+   ══════════════════════════════════════════════════════════════ */
+.orange {
+  /* Brand stays consistent — slightly deeper for contrast */
+  --color-brand:        #1a1a1a;
+  --color-brand-dark:   #000000;
+  --color-brand-glow:   #333333;
+
+  /* Surfaces — warm orange palette with step shades */
+  --color-bg:            #F16222;   /* primary — vivid orange */
+  --color-bg-raised:     #d9561e;   /* darker shade for raised areas */
+  --color-surface:       #e85c20;   /* card background */
+  --color-surface-raised:#f07038;   /* lighter warm tint */
+  --color-border:        rgba(0, 0, 0, 0.15);
+  --color-border-muted:  rgba(0, 0, 0, 0.08);
+
+  /* Section-specific */
+  --color-section-hero:      #F16222;
+  --color-section-verticals: #e05820;
+  --color-section-trust:     #d9561e;
+  --color-section-footer:    #1a1a1a;   /* dark footer for contrast */
+
+  /* Text tokens — dark on orange */
+  --color-text:         rgba(0,0,0,0.80);
+  --color-text-muted:   rgba(0,0,0,0.55);
+  --color-heading:      #0d0d0d;
+  --color-mid:          rgba(0,0,0,0.60);
+
+  /* Dot pattern */
+  --dot-color:  rgba(0, 0, 0, 0.06);
+
+  /* Toggle */
+  --toggle-bg:     rgba(0,0,0,0.08);
+  --toggle-border: rgba(0,0,0,0.2);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   BASE RESET & BODY
+   ══════════════════════════════════════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease;
+  overflow-x: hidden;
+}
+
+body {
+  margin:           0;
+  font-family:      var(--font-body);
+  color:            var(--color-text);
+  background-color: var(--color-bg);
+  overflow-x: hidden;
+  width: 100%;
+
+  background-image:
+    radial-gradient(
+      circle,
+      var(--dot-color) var(--dot-size),
+      transparent var(--dot-size)
+    ),
+    radial-gradient(
+      circle,
+      var(--dot-color) var(--dot-size),
+      transparent var(--dot-size)
+    );
+  background-size:
+    var(--dot-space) var(--dot-space),
+    var(--dot-space) var(--dot-space);
+  background-position:
+    0 0,
+    calc(var(--dot-space) / 2) calc(var(--dot-space) / 2);
+
+  transition:
+    background-color 0.25s ease,
+    color            0.25s ease;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   TYPOGRAPHY BASE
+   ══════════════════════════════════════════════════════════════ */
+h1, h2, h3, h4, h5, h6 {
+  font-family:    var(--font-display);
+  letter-spacing: -0.01em;
+  color:          var(--color-heading);
+  line-height:    1.1;
+  margin:         0;
+  transition:     color 0.25s ease;
+}
+
+p {
+  font-family: var(--font-body);
+  line-height: 1.75;
+  margin:      0;
+  transition:  color 0.25s ease;
+}
+
+a {
+  color:           inherit;
+  text-decoration: none;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   UTILITY CLASSES
+   ══════════════════════════════════════════════════════════════ */
+
+.text-brand { color: var(--color-brand); }
+
+.label {
+  font-family:    var(--font-mono);
+  font-size:      0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color:          var(--color-mid);
+  transition:     color 0.25s ease;
+}
+
+.rule-brand {
+  display:       block;
+  width:         48px;
+  height:        3px;
+  background:    var(--color-brand);
+  border:        none;
+  margin-bottom: 1.5rem;
+}
+
+.card-lift {
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.card-lift:hover {
+  transform:  translateY(-6px);
+  box-shadow: 0 20px 48px rgba(232,101,26,0.15), 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.nav-sticky {
+  position:         sticky;
+  top:              0;
+  z-index:          100;
+  background:       rgba(255,255,255,0.92);
+  backdrop-filter:  blur(12px);
+  border-bottom:    1px solid rgba(0,0,0,0.06);
+  transition:       background 0.25s ease, border-color 0.25s ease;
+}
+
+.dark .nav-sticky {
+  background:   rgba(13,13,13,0.92);
+  border-color: rgba(255,255,255,0.06);
+}
+
+.orange .nav-sticky {
+  background:   rgba(241,98,34,0.95);
+  border-color: rgba(0,0,0,0.10);
+}
+
+.section-pad {
+  padding: 6rem 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .container { padding: 0 2rem; }
+}
+
+@media (max-width: 768px) {
+  .section-pad { padding: 3.5rem 0; }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg-raised); }
+::-webkit-scrollbar-thumb { background: var(--color-brand); border-radius: 3px; }
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.btn-primary {
+  display:         inline-flex;
+  align-items:     center;
+  gap:             0.5rem;
+  padding:         0.65rem 1.5rem;
+  font-family:     var(--font-mono);
+  font-size:       0.75rem;
+  letter-spacing:  0.14em;
+  text-transform:  uppercase;
+  font-weight:     600;
+  border-radius:   2px;
+  background:      var(--color-brand);
+  color:           #ffffff;
+  border:          1.5px solid transparent;
+  cursor:          pointer;
+  transition:      background 0.22s ease, box-shadow 0.22s ease;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background:  var(--color-brand-dark);
+  box-shadow:  0 4px 16px rgba(232,101,26,0.35);
+}
+
+.btn-ghost {
+  display:         inline-flex;
+  align-items:     center;
+  gap:             0.5rem;
+  padding:         0.65rem 1.5rem;
+  font-family:     var(--font-mono);
+  font-size:       0.75rem;
+  letter-spacing:  0.14em;
+  text-transform:  uppercase;
+  font-weight:     600;
+  border-radius:   2px;
+  background:      transparent;
+  color:           var(--color-brand);
+  border:          1.5px solid var(--color-brand);
+  cursor:          pointer;
+  transition:      background 0.22s ease;
+  text-decoration: none;
+}
+
+.btn-ghost:hover {
+  background: rgba(232,101,26,0.08);
+}
+
+/* FIX: logo image sizing in nav */
+.logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}

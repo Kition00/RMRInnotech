@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" width="200" height="50">
+  <rect width="200" height="50" fill="none"/>
+  <text x="4" y="36" font-family="'Barlow Condensed', sans-serif" font-weight="800" font-size="32" fill="#e8651a" letter-spacing="2">RMR</text>
+  <text x="82" y="36" font-family="'Barlow Condensed', sans-serif" font-weight="300" font-size="18" fill="#111111" letter-spacing="4">INNOTECH</text>
+</svg>

@@ -1,0 +1,722 @@
+---
+const year = new Date().getFullYear();
+/**
+ * src/pages/index.astro
+ * ─────────────────────────────────────────────────────────────
+ * RMR Innotech — Main Landing Page
+ * Sections: Hero · Business Verticals · Footer
+ * ─────────────────────────────────────────────────────────────
+ */
+
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="RMR Innotech | Industrial Turnkey Solutions & Engineering Services"
+  description="RMR Innotech delivers integrated industrial engineering — Power Distribution, Engineering CAD Services, Fabric Processing Machineries, and Industrial Furnaces & Ovens — built on 30+ years in manufacturing."
+  keywords="Industrial Turnkey Solutions, Switchgear Manufacturing, Engineering CAD Services, Power Distribution Panels, Fabric Processing Machinery, Industrial Furnaces, RMR Innotech"
+>
+
+  <!-- ══════════════════════════════════════════════════════
+       HERO SECTION
+  ══════════════════════════════════════════════════════════ -->
+  <header class="hero-section">
+
+    <!-- Decorative corner brackets (pure CSS) -->
+    <span class="bracket bracket--tl" aria-hidden="true"></span>
+    <span class="bracket bracket--tr" aria-hidden="true"></span>
+    <span class="bracket bracket--bl" aria-hidden="true"></span>
+    <span class="bracket bracket--br" aria-hidden="true"></span>
+
+    <div class="hero-inner">
+
+      <!-- ── Logo Placeholder ─────────────────────────────── -->
+      <!--
+        REPLACE: Swap the placeholder below with a real <img> tag:
+        <img src="/logo.svg" alt="RMR Innotech logo" width="280" height="auto" />
+      -->
+      <div class="logo-placeholder" role="img" aria-label="RMR Innotech logo placeholder">
+        <span class="logo-placeholder__inner">
+          <span class="logo-placeholder__rmr">RMR</span>
+          <span class="logo-placeholder__innotech">INNOTECH</span>
+        </span>
+        <span class="logo-placeholder__tag">LLP</span>
+      </div>
+      <!-- /Logo Placeholder -->
+
+      <!-- ── Hero Intro Text ──────────────────────────────── -->
+      <div class="hero-copy">
+        <p class="label" style="margin-bottom:1rem;">Integrated Engineering Expertise</p>
+
+        <!-- H1 — primary keyword -->
+        <h1 class="hero-heading">
+          Industrial Turnkey Solutions<br />
+          <em>for the Modern World</em>
+        </h1>
+
+        <hr class="rule-brand" style="margin: 1.5rem 0;" />
+
+        <p class="hero-text">
+          Built on a foundation of 30+ years in the machine manufacturing sector, RMR Innotech is the
+          central hub for integrated engineering expertise. We provide end-to-end technical solutions
+          tailored to the modern industrial landscape. Explore our dedicated verticals to see how we
+          <strong>power</strong>, <strong>design</strong>, and <strong>heat</strong> the future.
+        </p>
+
+        <!-- CTA row -->
+        <div class="hero-cta">
+          <a href="#verticals" class="btn-primary">Explore Our Verticals</a>
+          <a href="/cad" class="btn-ghost">CAD Services →</a>
+        </div>
+      </div>
+      <!-- /Hero Copy -->
+
+    </div><!-- /hero-inner -->
+  </header>
+  <!-- /Hero -->
+
+
+  <!-- ══════════════════════════════════════════════════════
+       MAIN CONTENT
+  ══════════════════════════════════════════════════════════ -->
+  <main>
+
+    <!-- ── Business Verticals Grid ────────────────────────── -->
+    <section id="verticals" class="section-pad verticals-section" aria-label="Our Business Verticals">
+      <div class="container">
+
+        <!-- Section Header -->
+        <div class="section-header">
+          <p class="label">What We Do</p>
+          <h2 class="section-title">Our Business Verticals</h2>
+          <p class="section-sub">
+            Four focused engineering disciplines — each a complete ecosystem of design,
+            supply, and commissioning under one roof.
+          </p>
+        </div>
+
+        <!-- 4-Card Grid -->
+        <div class="verticals-grid" role="list">
+
+          <!-- Card 1: Power Distribution -->
+          <article class="vertical-card card-lift" role="listitem">
+            <a href="/power" class="vertical-card__link" aria-label="Power Distribution — visit dedicated page">
+              <div class="vertical-card__icon" aria-hidden="true">
+                <!-- Lightning bolt SVG icon -->
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22 4L8 22h12l-2 14 14-18H20L22 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="vertical-card__number" aria-hidden="true">01</div>
+              <h3 class="vertical-card__title">Power Distribution</h3>
+              <p class="vertical-card__desc">
+                Custom switchgear manufacturing, IEC/UL-certified panels, and turnkey
+                electrical infrastructure for industrial facilities.
+              </p>
+              <span class="vertical-card__arrow" aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- Card 2: Engineering CAD Services -->
+          <article class="vertical-card card-lift" role="listitem">
+            <a href="/cad" class="vertical-card__link" aria-label="Engineering CAD Services — visit dedicated page">
+              <div class="vertical-card__icon" aria-hidden="true">
+                <!-- Drafting compass SVG icon -->
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="20" cy="8" r="3" stroke="currentColor" stroke-width="2"/>
+                  <path d="M20 11v6M17.5 17l-6 16M22.5 17l6 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M11.5 33h17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="vertical-card__number" aria-hidden="true">02</div>
+              <h3 class="vertical-card__title">Engineering CAD Services</h3>
+              <p class="vertical-card__desc">
+                SolidWorks-based 3D modelling, industrial design, structural analysis,
+                and complete drawing-package delivery.
+              </p>
+              <span class="vertical-card__arrow" aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- Card 3: Fabric Processing Machineries -->
+          <article class="vertical-card card-lift" role="listitem">
+            <a href="/fabric" class="vertical-card__link" aria-label="Fabric Processing Machineries — visit dedicated page">
+              <div class="vertical-card__icon" aria-hidden="true">
+                <!-- Gear / cog SVG icon -->
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="20" cy="20" r="5" stroke="currentColor" stroke-width="2"/>
+                  <path d="M20 4v4M20 32v4M4 20h4M32 20h4M7.5 7.5l2.8 2.8M29.7 29.7l2.8 2.8M7.5 32.5l2.8-2.8M29.7 10.3l2.8-2.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="vertical-card__number" aria-hidden="true">03</div>
+              <h3 class="vertical-card__title">Fabric Processing Machineries</h3>
+              <p class="vertical-card__desc">
+                Purpose-built textile machinery engineered for dynamic fabric
+                processing sector — from concept to commissioning.
+              </p>
+              <span class="vertical-card__arrow" aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- Card 4: Industry Furnaces & Ovens -->
+          <article class="vertical-card card-lift" role="listitem">
+            <a href="/furnaces" class="vertical-card__link" aria-label="Industry Furnaces and Ovens — visit dedicated page">
+              <div class="vertical-card__icon" aria-hidden="true">
+                <!-- Flame SVG icon -->
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 36c-7.18 0-13-5.37-13-12 0-4 2-8 5-11-1 4 1 7 3 8-1-5 3-10 8-13-2 6 1 9 3 11 1-3 0-6-1-8 4 3 8 8 8 13 0 6.63-5.82 12-13 12z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="vertical-card__number" aria-hidden="true">04</div>
+              <h3 class="vertical-card__title">Industry Furnaces &amp; Ovens</h3>
+              <p class="vertical-card__desc">
+                High-temperature industrial furnaces and custom ovens designed to
+                precise thermal specs for metallurgical and manufacturing processes.
+              </p>
+              <span class="vertical-card__arrow" aria-hidden="true">→</span>
+            </a>
+          </article>
+
+        </div><!-- /verticals-grid -->
+      </div><!-- /container -->
+    </section>
+    <!-- /Business Verticals -->
+
+
+    <!-- ── Why RMR Innotech ────────────────────────────────── -->
+    <section class="section-pad trust-strip" aria-label="Why choose RMR Innotech">
+      <div class="container">
+        <div class="trust-grid">
+
+          <div class="trust-stat">
+            <span class="trust-stat__num">30<span class="trust-stat__plus">+</span></span>
+            <span class="trust-stat__label">Years in Manufacturing</span>
+          </div>
+
+          <div class="trust-divider" aria-hidden="true"></div>
+
+          <div class="trust-stat">
+            <span class="trust-stat__num">4</span>
+            <span class="trust-stat__label">Engineering Verticals</span>
+          </div>
+
+          <div class="trust-divider" aria-hidden="true"></div>
+
+          <div class="trust-stat">
+            <span class="trust-stat__num">IEC<span class="trust-stat__plus">/</span>UL</span>
+            <span class="trust-stat__label">Certified Standards</span>
+          </div>
+
+          <div class="trust-divider" aria-hidden="true"></div>
+
+          <div class="trust-stat">
+            <span class="trust-stat__num">E2E</span>
+            <span class="trust-stat__label">End-to-End Delivery</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- /Trust Strip -->
+
+  </main>
+  <!-- /Main Content -->
+
+
+  <!-- ══════════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+
+      <!-- Left: brand -->
+      <div class="footer-brand">
+        <span class="footer-logo-text">RMR <strong>INNOTECH</strong> <sup>LLP</sup></span>
+        <p class="footer-tagline">Engineering the Future</p>
+      </div>
+
+      <!-- Centre: quick links -->
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/power">Power Distribution</a>
+        <a href="/cad">CAD Services</a>
+        <a href="/fabric">Fabric Machineries</a>
+        <a href="/furnaces">Furnaces &amp; Ovens</a>
+      </nav>
+
+      <!-- Right: address -->
+      <address class="footer-address">
+        <strong>RMR Innotech LLP</strong><br />
+        Plot No. 7125, Road No. 71,<br />
+        G.I.D.C. Sachin, Surat – 394230<br />
+        Gujarat, India
+      </address>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <span>© {year} RMR Innotech LLP. All rights reserved.</span>
+      <span class="footer-bottom__built">Industrial Turnkey Solutions &amp; Switchgear Manufacturing</span>
+    </div>
+  </footer>
+  <!-- /Footer -->
+
+</Layout>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE-SCOPED STYLES
+     (Scoped to this page only — won't bleed into other pages)
+════════════════════════════════════════════════════════════ -->
+<style>
+
+  /* ── Container ──────────────────────────────────────── */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* ══ HERO ════════════════════════════════════════════ */
+  .hero-section {
+    position: relative;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 6rem 2rem;
+    background-color: var(--color-section-hero, var(--color-bg));
+    background-image: radial-gradient(ellipse 80% 60% at 50% 40%, var(--color-bg-raised) 0%, transparent 70%);
+  }
+
+  /* Corner bracket decorations */
+  .bracket {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-color: var(--color-brand);
+    border-style: solid;
+    opacity: 0.35;
+  }
+  .bracket--tl { top: 2rem; left: 2rem; border-width: 2px 0 0 2px; }
+  .bracket--tr { top: 2rem; right: 2rem; border-width: 2px 2px 0 0; }
+  .bracket--bl { bottom: 2rem; left: 2rem; border-width: 0 0 2px 2px; }
+  .bracket--br { bottom: 2rem; right: 2rem; border-width: 0 2px 2px 0; }
+
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 760px;
+    gap: 3rem;
+  }
+
+  /* ── Logo Placeholder ───────────────────────────────── */
+  .logo-placeholder {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+    border: 2px solid var(--color-brand);
+    background: var(--color-bg);
+    box-shadow: 6px 6px 0 var(--color-brand);
+    max-width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    .logo-placeholder {
+      padding: 1rem;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+
+  .logo-placeholder__inner {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+
+  .logo-placeholder__rmr {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 2.5rem;
+    letter-spacing: 0.1em;
+    color: var(--color-brand);
+  }
+
+  .logo-placeholder__innotech {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 1rem;
+    letter-spacing: 0.4em;
+    color: var(--color-heading);
+  }
+
+  .logo-placeholder__tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    color: var(--color-mid);
+    align-self: flex-end;
+    padding-bottom: 0.2rem;
+  }
+
+  /* ── Hero Copy ──────────────────────────────────────── */
+  .hero-heading {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    text-transform: uppercase;
+    line-height: 1.05;
+    color: var(--color-heading);
+  }
+
+  .hero-heading em {
+    font-style: normal;
+    color: var(--color-brand);
+  }
+
+  .hero-text {
+    font-size: 1.05rem;
+    color: var(--color-text);
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+
+  .btn-primary {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.85rem 2rem;
+    background: var(--color-brand);
+    color: #ffffff;
+    border: 2px solid var(--color-brand);
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--color-brand);
+  }
+
+  .btn-ghost {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.85rem 1.5rem;
+    border: 2px solid var(--color-heading);
+    color: var(--color-heading);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-ghost:hover {
+    border-color: var(--color-brand);
+    color: var(--color-brand);
+  }
+
+
+  /* ══ SECTION HEADER ═══════════════════════════════════ */
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .section-sub {
+    max-width: 520px;
+    margin: 0 auto;
+    color: var(--color-mid);
+    font-size: 0.95rem;
+  }
+
+
+  /* ══ VERTICALS GRID ═══════════════════════════════════ */
+  .verticals-section {
+    background-color: var(--color-section-verticals, var(--color-bg));
+  }
+
+  .verticals-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5px;
+    background: var(--color-border);
+    border: 1.5px solid var(--color-border);
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  @media (max-width: 1024px) {
+    .verticals-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .verticals-grid { 
+      grid-template-columns: 1fr; 
+      gap: 1.5rem;
+      background: transparent;
+      border: none;
+    }
+  }
+
+  /* Individual card */
+  .vertical-card {
+    background: var(--color-surface, var(--color-bg));
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+  }
+
+  .vertical-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 48px rgba(232,101,26,0.13), 0 4px 12px rgba(0,0,0,0.07);
+    z-index: 1;
+  }
+
+  .vertical-card:hover .vertical-card__icon svg {
+    stroke: var(--color-brand);
+  }
+
+  .vertical-card:hover .vertical-card__title {
+    color: var(--color-brand);
+  }
+
+  .vertical-card:hover .vertical-card__arrow {
+    transform: translateX(4px);
+    color: var(--color-brand);
+  }
+
+  .vertical-card__link {
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem 2rem;
+    height: 100%;
+    min-height: 280px;
+    gap: 0.75rem;
+  }
+
+  .vertical-card__icon svg {
+    width: 36px;
+    height: 36px;
+    stroke: var(--color-heading);
+    transition: stroke 0.2s;
+  }
+
+  .vertical-card__number {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--color-brand);
+    margin-top: auto;
+  }
+
+  .vertical-card__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    color: var(--color-heading);
+    transition: color 0.2s;
+    line-height: 1.2;
+  }
+
+  .vertical-card__desc {
+    font-size: 0.875rem;
+    color: var(--color-mid);
+    line-height: 1.65;
+    flex: 1;
+  }
+
+  .vertical-card__arrow {
+    font-size: 1.2rem;
+    color: var(--color-heading);
+    transition: transform 0.2s, color 0.2s;
+    margin-top: 0.5rem;
+  }
+
+
+  /* ══ TRUST STRIP ════════════════════════════════════════ */
+  .trust-strip {
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    background-color: var(--color-section-trust, var(--color-bg-raised));
+    padding: 3.5rem 0;
+  }
+
+  .trust-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+
+  .trust-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 1.5rem 3rem;
+    flex: 1;
+    min-width: 160px;
+  }
+
+  .trust-stat__num {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 2.4rem;
+    color: var(--color-heading);
+    line-height: normal;
+  }
+
+  .trust-stat__plus {
+    color: var(--color-brand);
+  }
+
+  .trust-stat__label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-mid);
+    text-align: center;
+  }
+
+  .trust-divider {
+    width: 1px;
+    height: 60px;
+    background: var(--color-border);
+  }
+
+  @media (max-width: 600px) {
+    .trust-divider { display: none; }
+  }
+
+
+  /* ══ FOOTER ══════════════════════════════════════════ */
+  .site-footer {
+    background-color: var(--color-section-footer, #111111);
+    color: rgba(255,255,255,0.7);
+  }
+
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: start;
+    gap: 3rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .footer-inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .footer-nav { justify-content: center; }
+    .footer-address { text-align: center; }
+  }
+
+  .footer-logo-text {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--color-white);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-logo-text strong { font-weight: 800; }
+
+  .footer-logo-text sup {
+    font-size: 0.5em;
+    font-family: var(--font-mono);
+    letter-spacing: 0.15em;
+    color: var(--color-brand);
+  }
+
+  .footer-tagline {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.35);
+    font-family: var(--font-mono);
+    letter-spacing: 0.1em;
+  }
+
+  .footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .footer-nav a {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    transition: color 0.18s;
+  }
+
+  .footer-nav a:hover { color: var(--color-brand); }
+
+  .footer-address {
+    font-style: normal;
+    font-size: 0.82rem;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.5);
+    text-align: right;
+  }
+
+  @media (max-width: 768px) {
+    .footer-address { text-align: center; }
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 2rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.07em;
+    color: rgba(255,255,255,0.25);
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 600px) {
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
