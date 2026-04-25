@@ -304,58 +304,12 @@ import Layout from '../layouts/Layout.astro';
     gap: 3rem;
   }
 
-  /* ── Logo Placeholder ───────────────────────────────── */
-  .logo-placeholder {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    padding: 1.5rem 2rem;
-    border: 2px solid var(--color-brand);
-    background: var(--color-bg);
-    box-shadow: 6px 6px 0 var(--color-brand);
+  /* ── Hero Logo ──────────────────────────────────────── */
+  .hero-logo {
+    width: 280px;
     max-width: 100%;
-  }
-
-  @media (max-width: 480px) {
-    .logo-placeholder {
-      padding: 1rem;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-  }
-
-  .logo-placeholder__inner {
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
-  }
-
-  .logo-placeholder__rmr {
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 2.5rem;
-    letter-spacing: 0.1em;
-    color: var(--color-brand);
-  }
-
-  .logo-placeholder__innotech {
-    font-family: var(--font-display);
-    font-weight: 300;
-    font-size: 1rem;
-    letter-spacing: 0.4em;
-    color: var(--color-heading);
-  }
-
-  .logo-placeholder__tag {
-    font-family: var(--font-mono);
-    font-size: 0.6rem;
-    letter-spacing: 0.1em;
-    color: var(--color-mid);
-    align-self: flex-end;
-    padding-bottom: 0.2rem;
+    height: auto;
+    display: block;
   }
 
   /* ── Hero Copy ──────────────────────────────────────── */
