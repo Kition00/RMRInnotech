@@ -22,10 +22,10 @@
   --color-white:        #ffffff;
 
   /* Semantic surface tokens */
-  --color-bg:           #ffffff;
-  --color-bg-raised:    #f4f4f5;
-  --color-surface:      #ffffff;
-  --color-surface-raised:#f4f4f5;
+  --color-bg:           #E6E6DB;
+  --color-bg-raised:    #d8d8cd;
+  --color-surface:      #E6E6DB;
+  --color-surface-raised:#d8d8cd;
   --color-border:       rgba(0, 0, 0, 0.10);
   --color-border-muted: rgba(0, 0, 0, 0.05);
 
@@ -224,7 +224,7 @@ a {
   position:         sticky;
   top:              0;
   z-index:          100;
-  background:       rgba(255,255,255,0.92);
+  background:       rgba(230,230,219,0.92);
   backdrop-filter:  blur(12px);
   border-bottom:    1px solid rgba(0,0,0,0.06);
   transition:       background 0.25s ease, border-color 0.25s ease;

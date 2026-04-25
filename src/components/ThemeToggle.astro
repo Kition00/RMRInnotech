@@ -1,27 +1,4 @@
 ---
-/**
- * src/components/ThemeToggle.astro
- * ─────────────────────────────────────────────────────────────
- * Persistent Dark Mode Toggle — "Performance Design" aesthetic
- *
- * Strategy:
- *  1. An inline <script> in <head> (added via Layout.astro) reads
- *     localStorage before paint — eliminating the FOUC / flicker
- *     on every route change or hard reload.
- *  2. This component renders the visible Sun/Moon button and
- *     registers the click handler.
- *
- * Usage in Layout.astro:
- *   import ThemeToggle from '../components/ThemeToggle.astro';
- *   // 1. Place <ThemeToggle.InlineScript /> inside <head> (FIRST child)
- *   // 2. Place <ThemeToggle /> wherever you want the button (e.g., nav)
- *
- * Because Astro components can't export sub-components, the inline
- * anti-flicker script is provided as a separate comment block below
- * for you to paste directly into your <head>.
- * ─────────────────────────────────────────────────────────────
- */
-
 export interface Props {
   /** Additional classes for the toggle button wrapper */
   class?: string;

@@ -207,13 +207,26 @@ const year = new Date().getFullYear();
         </div>
 
         <div class="projects-grid">
-          {Array.from({ length: 6 }).map((_, i) => (
+
+          <!-- Project 1 — video -->
+          <div class="project-thumb project-thumb--video">
+            <iframe
+              src="https://www.youtube.com/embed/Jy2to7TrZ9A"
+              title="RMR Innotech Project 1 Showcase"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+
+          <!-- Projects 2–6 -->
+          {Array.from({ length: 5 }).map((_, i) => (
             <div class="project-thumb">
               <div class="project-thumb__inner">
                 <div class="project-thumb__overlay"></div>
                 <div class="project-thumb__content">
-                  <span class="project-thumb__num">0{i + 1}</span>
-                  <span class="project-thumb__label">Project {i + 1}</span>
+                  <span class="project-thumb__num">0{i + 2}</span>
+                  <span class="project-thumb__label">Project {i + 2}</span>
                   <span class="project-thumb__sub">Image coming soon</span>
                 </div>
               </div>
@@ -822,6 +835,22 @@ const year = new Date().getFullYear();
   .project-thumb:hover .project-thumb__inner {
     background: var(--color-surface);
     outline: 1px solid var(--color-brand);
+  }
+
+  .project-thumb--video {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+  }
+
+  .project-thumb--video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
   }
 
   .projects-note {
