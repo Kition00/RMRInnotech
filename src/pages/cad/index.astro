@@ -217,6 +217,11 @@ const year = new Date().getFullYear();
               allowfullscreen
               loading="lazy"
             ></iframe>
+            <div class="project-thumb__client">
+              <span class="project-thumb__client-num">01</span>
+              <span class="project-thumb__client-name">Modular Power &amp; Data</span>
+              <span class="project-thumb__client-desc">Power Distribution Equipment Manufacturer, USA</span>
+            </div>
           </div>
 
           <!-- Projects 2–6 -->
@@ -851,6 +856,44 @@ const year = new Date().getFullYear();
     width: 100%;
     height: 100%;
     border: none;
+  }
+
+  .project-thumb__client {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(4px);
+    padding: 0.5rem 0.75rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .project-thumb__client-num {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.12em;
+    color: var(--color-brand);
+  }
+
+  .project-thumb__client-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+
+  .project-thumb__client-desc {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.55);
+    text-transform: uppercase;
   }
 
   .projects-note {
