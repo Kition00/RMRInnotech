@@ -80,7 +80,9 @@ const {
     -->
     {showTopbar && (
       <div class="layout-topbar">
-        <span class="topbar-brand-mark" aria-hidden="true">RMR</span>
+        <a href="/" aria-label="RMR Innotech home">
+          <img src="/assets/RMRlogo.svg" alt="RMR Innotech Logo" class="topbar-logo" />
+        </a>
         <ThemeToggle />
       </div>
     )}
@@ -118,11 +120,10 @@ const {
     border-color: rgba(0,0,0,0.10);
   }
 
-  .topbar-brand-mark {
-    font-family:    var(--font-mono);
-    font-size:      0.7rem;
-    letter-spacing: 0.25em;
-    color:          var(--color-brand);
-    font-weight:    600;
+  .topbar-logo {
+    height: 32px;
+    width: auto;
+    display: block;
+    object-fit: contain;
   }
 </style>
